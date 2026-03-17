@@ -75,10 +75,15 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Install Chromium for react-snap
+        run: npx puppeteer browsers install chrome
+
       - name: Build + SSG
         run: pnpm build
         env:
           VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL }}
+          PUPPETEER_SKIP_DOWNLOAD: false
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
