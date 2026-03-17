@@ -9,7 +9,6 @@ const mockResume: Resume = {
   title: 'Software Engineer',
   summary: 'Test summary',
   contact: {
-    city: 'HCMC',
     email: 'test@test.com',
     linkedin: 'linkedin/test',
     linkedinUrl: 'https://linkedin.com/in/test',

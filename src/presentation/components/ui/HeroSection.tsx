@@ -27,7 +27,6 @@ export function HeroSection({ resume }: HeroSectionProps) {
 
       {/* Contact pills */}
       <div className="flex flex-wrap gap-3">
-        <ContactPill icon="📍" label={resume.contact.city} />
         <a href={`mailto:${resume.contact.email}`}>
           <ContactPill icon="✉" label={resume.contact.email} hoverable />
         </a>

@@ -13,7 +13,6 @@ describe('StaticResumeRepository', () => {
   it('should return correct contact info', async () => {
     const resume = await repo.getResume()
     expect(resume.contact.email).toBe('hungvuongg71@gmail.com')
-    expect(resume.contact.city).toBe('Ho Chi Minh City')
   })
 
   it('should return work experiences', async () => {
