@@ -31,10 +31,9 @@ export function HeroSection({ resume }: HeroSectionProps) {
         <a href={`mailto:${resume.contact.email}`}>
           <ContactPill icon="✉" label={resume.contact.email} hoverable />
         </a>
-        <a href={`tel:${resume.contact.phone}`}>
-          <ContactPill icon="📞" label={resume.contact.phone} hoverable />
+        <a href={resume.contact.linkedinUrl} target="_blank" rel="noopener noreferrer">
+          <ContactPill icon="💼" label={resume.contact.linkedin} hoverable />
         </a>
-        <ContactPill icon="💼" label={resume.contact.linkedin} />
       </div>
     </section>
   )

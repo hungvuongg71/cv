@@ -40,3 +40,47 @@
     @apply bg-brand-orange/20 text-brand-black dark:text-white;
   }
 }
+
+@media print {
+  /* Ẩn header, footer, button khi in */
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset background về trắng */
+  body,
+  html {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Bỏ animation */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Full width khi in */
+  main {
+    max-width: 100% !important;
+    padding: 0 16px !important;
+  }
+
+  /* Giữ màu cam cho headings */
+  .text-brand-orange {
+    color: #cf6829 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Tránh bị cắt giữa chừng */
+  section {
+    break-inside: avoid;
+  }
+
+  .group {
+    break-inside: avoid;
+  }
+}

@@ -2,9 +2,9 @@
 
 export interface ContactInfo {
   city: string
-  phone: string
   email: string
   linkedin: string
+  linkedinUrl: string
 }
 
 export interface WorkExperience {
@@ -33,9 +33,14 @@ export interface Education {
   period: string
 }
 
+export interface SkillItem {
+  name: string
+  years?: number // optional, không phải skill nào cũng cần
+}
+
 export interface SkillGroup {
   category: string
-  items: string[]
+  items: SkillItem[]
 }
 
 export interface Resume {

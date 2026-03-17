@@ -9,9 +9,9 @@ export const resumeData: Resume = {
     'Results-driven Full-Stack Software Engineer with 5+ years of experience in enterprise and freelance environments. Proficient in .NET, Java, and modern JavaScript frameworks (React, Angular, React Native), with a strong track record integrating third-party APIs (AWS, PayPal, Blockchain) and maintaining high-availability systems. Actively applies AI tools and Prompt Engineering to accelerate development and improve code quality.',
   contact: {
     city: 'Ho Chi Minh City',
-    phone: '+84 79 587 9636',
     email: 'hungvuongg71@gmail.com',
     linkedin: 'linkedin/vhung71',
+    linkedinUrl: 'https://linkedin.com/in/vhung71',
   },
   workExperiences: [
     {
@@ -124,41 +124,59 @@ export const resumeData: Resume = {
     {
       category: 'Back-end Frameworks',
       items: [
-        'ASP.NET / .NET Core',
-        'ABP Framework',
-        'Umbraco .NET',
-        'DotNetNuke',
-        'Spring Framework',
-        'NodeJS',
+        { name: 'ASP.NET / .NET Core', years: 5 },
+        { name: 'ABP Framework', years: 3 },
+        { name: 'Umbraco .NET', years: 2 },
+        { name: 'DotNetNuke', years: 2 },
+        { name: 'Spring Framework', years: 2 },
+        { name: 'NodeJS', years: 2 },
       ],
     },
     {
       category: 'Front-end Frameworks',
-      items: ['React / NextJS', 'Angular', 'Webpack / Vite', 'TailwindCSS', 'jQuery'],
+      items: [
+        { name: 'React / NextJS', years: 4 },
+        { name: 'Angular', years: 5 },
+        { name: 'Webpack / Vite', years: 3 },
+        { name: 'TailwindCSS', years: 3 },
+        { name: 'jQuery', years: 5 },
+      ],
     },
     {
       category: 'Databases',
-      items: ['Oracle', 'MySQL', 'PostgreSQL', 'SQL Server'],
+      items: [
+        { name: 'Oracle', years: 3 },
+        { name: 'MySQL', years: 4 },
+        { name: 'PostgreSQL', years: 2 },
+        { name: 'SQL Server', years: 5 },
+      ],
     },
     {
       category: 'Server Environments',
-      items: ['Linux, Nginx Server', 'Windows, Microsoft IIS'],
+      items: [
+        { name: 'Linux, Nginx Server', years: 3 },
+        { name: 'Windows, Microsoft IIS', years: 5 },
+      ],
     },
     {
       category: 'Tools & AI Productivity',
       items: [
-        'Docker',
-        'Cloudflare',
-        'VS Studio / VS Code',
-        'Figma',
-        'Git / SVN',
-        'ChatGPT / Gemini / Claude',
-        'Antigravity / Codex GPT',
+        { name: 'Docker', years: 2 },
+        { name: 'Cloudflare', years: 2 },
+        { name: 'VS Studio / VS Code', years: 5 },
+        { name: 'Figma', years: 3 },
+        { name: 'Git / SVN', years: 5 },
+        { name: 'ChatGPT / Gemini / Claude', years: 2 },
+        { name: 'Antigravity / Codex GPT', years: 1 },
       ],
     },
     {
       category: 'Soft Skills',
-      items: ['Analytical Problem Resolving', 'Agile / Scrum', 'Cross-functional Collaboration'],
+      items: [
+        { name: 'Analytical Problem Resolving' },
+        { name: 'Agile / Scrum' },
+        { name: 'Cross-functional Collaboration' },
+      ],
     },
   ],
   languages: [
