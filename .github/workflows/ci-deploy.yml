@@ -18,7 +18,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # ─── Job 1: Run on every PR into main ───────────────────────────────────────
   ci:
     name: Lint · Type-check · Test
     runs-on: ubuntu-latest
@@ -26,20 +25,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8.15.9
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
+          cache: pnpm
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Type check
-        run: npm run type-check
+        run: pnpm type-check
 
       - name: Run unit tests
-        run: npm run test
+        run: pnpm test
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
@@ -49,7 +53,6 @@ jobs:
           path: coverage/
           retention-days: 7
 
-  # ─── Job 2: SSG Build (runs after CI passes) ────────────────────────────────
   build:
     name: SSG Build
     needs: ci
@@ -58,17 +61,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8.15.9
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
+          cache: pnpm
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
-      - name: Build SSG
-        run: npm run ssg
+      - name: Build + SSG
+        run: pnpm build
         env:
           VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL }}
 
@@ -80,7 +88,6 @@ jobs:
         with:
           path: dist/
 
-  # ─── Job 3: Deploy – only when merged to main ───────────────────────────────
   deploy:
     name: Deploy to GitHub Pages
     needs: build
