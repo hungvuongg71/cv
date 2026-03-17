@@ -1,7 +1,6 @@
 // Domain Entity – core business object, no framework dependencies
 
 export interface ContactInfo {
-  city: string
   email: string
   linkedin: string
   linkedinUrl: string

@@ -5,9 +5,6 @@ export function Footer() {
         <span className="font-serif text-sm text-brand-gray dark:text-gray-500">
           © {new Date().getFullYear()} Hung Vuong
         </span>
-        <span className="font-sans text-xs text-brand-gray dark:text-gray-600">
-          Built with React + Vite + TailwindCSS · Clean Architecture
-        </span>
       </div>
     </footer>
   )

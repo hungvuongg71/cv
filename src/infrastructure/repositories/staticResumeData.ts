@@ -8,7 +8,6 @@ export const resumeData: Resume = {
   summary:
     'Results-driven Full-Stack Software Engineer with 5+ years of experience in enterprise and freelance environments. Proficient in .NET, Java, and modern JavaScript frameworks (React, Angular, React Native), with a strong track record integrating third-party APIs (AWS, PayPal, Blockchain) and maintaining high-availability systems. Actively applies AI tools and Prompt Engineering to accelerate development and improve code quality.',
   contact: {
-    city: 'Ho Chi Minh City',
     email: 'hungvuongg71@gmail.com',
     linkedin: 'linkedin/vhung71',
     linkedinUrl: 'https://linkedin.com/in/vhung71',
