@@ -8,7 +8,12 @@ const mockResume: Resume = {
   nameVi: 'Vương Hùng',
   title: 'Software Engineer',
   summary: 'Test summary',
-  contact: { city: 'HCMC', phone: '0795879636', email: 'test@test.com', linkedin: 'linkedin/test' },
+  contact: {
+    city: 'HCMC',
+    email: 'test@test.com',
+    linkedin: 'linkedin/test',
+    linkedinUrl: 'https://linkedin.com/in/test',
+  },
   workExperiences: [],
   freelanceProjects: [],
   education: [],
