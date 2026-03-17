@@ -75,9 +75,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Install Chromium for react-snap
-        run: npx puppeteer browsers install chrome
-
       - name: Build + SSG
         run: pnpm build
         env:
