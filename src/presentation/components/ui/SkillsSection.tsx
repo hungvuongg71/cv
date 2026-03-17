@@ -38,19 +38,35 @@ export function SkillsSection({ skillGroups, languages }: SkillsSectionProps) {
 }
 
 function SkillCard({ group }: { group: SkillGroup }) {
+  const maxYears = 5
+
   return (
     <div className="rounded-xl border border-brand-gray-border dark:border-brand-black-light p-5 bg-brand-gray-light dark:bg-brand-black-light/30 hover:border-brand-orange/40 transition-colors duration-200">
-      <h4 className="font-serif text-sm text-brand-orange mb-3 uppercase tracking-wider">
+      <h4 className="font-serif text-sm text-brand-orange mb-4 uppercase tracking-wider">
         {group.category}
       </h4>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-col gap-3">
         {group.items.map((item) => (
-          <span
-            key={item}
-            className="font-sans text-xs text-brand-black dark:text-gray-300 bg-white dark:bg-brand-black border border-brand-gray-border dark:border-brand-black-light rounded-full px-3 py-1"
-          >
-            {item}
-          </span>
+          <div key={item.name}>
+            <div className="flex items-center justify-between mb-1">
+              <span className="font-sans text-xs text-brand-black dark:text-gray-300">
+                {item.name}
+              </span>
+              {item.years && (
+                <span className="font-sans text-xs text-brand-gray dark:text-gray-500 shrink-0 ml-2">
+                  {item.years}yr{item.years > 1 ? 's' : ''}
+                </span>
+              )}
+            </div>
+            {item.years && (
+              <div className="h-1 w-full bg-brand-gray-border dark:bg-brand-black-light rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-brand-orange rounded-full transition-all duration-500"
+                  style={{ width: `${(item.years / maxYears) * 100}%` }}
+                />
+              </div>
+            )}
+          </div>
         ))}
       </div>
     </div>
